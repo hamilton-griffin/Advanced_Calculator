@@ -615,6 +615,8 @@ def Main():
             Equations()
         elif user_input == '9':
             Physics()
+        elif user_input == '10':
+            Arithmetic_Calcs()
 '''
 try:
     Main()
