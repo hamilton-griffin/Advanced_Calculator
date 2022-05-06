@@ -1,0 +1,25 @@
+'Circles':
+    Area = pi * r * r
+    Diameter = 2r
+    Circumfrence = 2*pi*r
+'Slope':
+    y2 - y1 / x2 - x1
+'Right Triangle':
+    Area = (B * H) / 2
+    Height = sqrt((Hypotenuse **) - (base **))
+'Triangular Prisim':
+    Surface Area =  (bh + (a + b + c)H)
+    Volume = (1/2) * Base * Height * Length
+'Sphere':
+    Volume = (4/3) * PI * Radius ** 3
+    Surface Area = 4 * PI * Radius ** 2
+    Diameter = 2 * Radius
+    Radius = Diameter / 2
+//////////////////////////////////////////////////////////////
+    physics:
+      gravitational pull : Gravity*(M1*M2/R^2) == Force {M1: mass1, M2: mass2, R^2: Distance between two object centers}
+
+    Velocity: (x/t) = average Velocity {x = displacement, t = Time}
+
+    acceleration: (V - V1/t) = accl {v: final velocity, V1: starting velocity, t: time}
+//////////////////////////////////////////////////////////////
