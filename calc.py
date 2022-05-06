@@ -13,13 +13,14 @@ The code below are vars for information the formulas
 '''
 sides = ['A', 'a', 'B', 'b', 'C', 'c']
 operation_signs = ['+', '-', '*', '/', 'sqrt', 'SQRT', '**']
-main_options = ['1', '2', '3', '4', '5', '6', '7', '8' ,'9']
+main_options = ['1', '2', '3', '4', '5', '6', '7', '8' ,'9', '10']
 circle_options = ['1', '2', '3', '4', '5', '6', '7']
 Triangle_Selection = ['1', '2']
 RightTriangle_Selection = ['1', '2']
 TriangularPrisim_Selection = ['1', '2']
 Equation_Options_Seletions = ['1', '2']
 Physics_Options_Selections = ['1', '2', '3']
+Arithmetic_OPS = ['1', '2']
 program_STATE = ''
 PIE = float(3.14)
 '''
@@ -531,6 +532,41 @@ def Physics():
 ##########################
 ##########################
 ##########################
+
+def Arithmetic_Sequence():
+    ConsoleClear()
+    Sequence_Num_ONE_Input = int(input('First Num of sequence: '))
+    Term_VAL_Input = int(input('Term: '))
+    Difference_Input = int(input('Difference: '))
+
+    VAL_OF_TERM = Sequence_Num_ONE_Input + (Term_VAL_Input - 1) * (Difference_Input)
+
+    print(str(Sequence_Num_ONE_Input) + ' + ( ' + Term_VAL_Input + ' - 1 ) * ( ' + str(Difference_Input) + ' ) = ' + VAL_OF_TERM)
+
+
+def Arithmetic_SUM():
+    ConsoleClear()
+    TERM_Input = int(input('n term: '))
+    TERM_ONE_INPUT = int(input('first value: '))
+
+    SUM_OF_SEQUENCE = TERM_INPUT * ( TERM_ONE_INPUT + TERM_INPUT / 2)
+
+    print(str(TERM_INPUT) + ' ( ' + str(TERM_ONE_INPUT) + ' + ' + str(TERM_INPUT) + ' / 2 ) = ' + str(SUM_OF_SEQUENCE))
+
+
+def Arithmetic_Calcs():
+    ConsoleClear()
+    print('1. Arithmetic Sequence')
+    print('2. Arithmetic Sum')
+    Arithmetic_OPS_Input = input(': ')
+
+    if Arithmetic_OPS_Input not in Arithmetic_OPS:
+        print('Not Found.')
+    elif Arithmetic_OPS_Input == '1':
+        Arithmetic_Sequence()
+    elif Arithmetic_OPS_Input == '2':
+        Arithmetic_SUM()
+
 ##########################
 ##########################
 ##########################
@@ -557,6 +593,7 @@ def Main():
         print('7. Percentages')
         print('8. Equations (ex: 2x+10)')
         print('9. physics')
+        print('10. Arithmetic sequences & series')
         user_input = input(': ')
         if user_input not in main_options:
             print('not an option.')
