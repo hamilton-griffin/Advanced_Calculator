@@ -1,3 +1,13 @@
+'''
+This program has been made by Jacob Hamilton all credits go to him.
+the program is updated regularly when bugs arise
+or new formulas are updated.
+'''
+
+
+
+
+
 from math import sqrt
 import math
 import os
@@ -13,13 +23,13 @@ The code below are vars for information the formulas
 '''
 sides = ['A', 'a', 'B', 'b', 'C', 'c']
 operation_signs = ['+', '-', '*', '/', 'sqrt', 'SQRT', '**']
-main_options = ['1', '2', '3', '4', '5', '6', '7', '8' ,'9', '10']
+main_options = ['1', '2', '3', '4', '5', '6', '7', '8' ,'9', '10', '11']
 circle_options = ['1', '2', '3', '4', '5', '6', '7']
 Triangle_Selection = ['1', '2']
 RightTriangle_Selection = ['1', '2']
 TriangularPrisim_Selection = ['1', '2']
 Equation_Options_Seletions = ['1', '2']
-Physics_Options_Selections = ['1', '2', '3']
+Physics_Options_Selections = ['1', '2', '3', '4']
 Arithmetic_OPS = ['1', '2']
 program_STATE = ''
 PIE = float(3.14)
@@ -49,17 +59,6 @@ def ErrorValidation():
             print('1')
     except:
         print('2')
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
 ##########################
 def PythagoreanTheorem():
     program_STATE = 'pythagorean theorem'
@@ -96,17 +95,6 @@ def PythagoreanTheorem():
         #
         print('Side C length: ' + str(side_c))
         ConsoleClear()
-##########################
-##########################
-##########################
-##########################
-########################## ha 69
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
 ##########################
 def Basic_Math():
     program_STATE = 'basic math'
@@ -188,17 +176,6 @@ def Basic_Math():
             print(str(expression_a) + str(operation_choice) + str(expression_b) + '=' + str(expression_C))
             ConsoleClear()
 ##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
 def Circles():
     program_STATE = 'circles'
     ConsoleClear()
@@ -263,17 +240,6 @@ def Circles():
         print(str(expression_SPHERE_DIAMETER) + ' / 2 = ' + str(expression_SPHERE_RADIUS))
         ConsoleClear()
 ##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
 def SlopeCalculator():
     program_STATE = 'slope'
     ConsoleClear()
@@ -285,16 +251,6 @@ def SlopeCalculator():
     expression_SLOPE = (expression_y2 - expression_y1) / (expression_x2 - expression_x1)
     print('( ' + str(expression_y2) + ' - ' + str(expression_y1) + ' ) / ( ' + str(expression_x2) + ' - ' + str(expression_x1) + ' ) = ' + str(expression_SLOPE))
     ConsoleClear()
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
 ##########################
 ''' Right Triangle  Calculator Function'''
 def RightTriangleCalculator():
@@ -354,17 +310,6 @@ def GeometryCalculator():
     elif Triangle_Selection_input == '2':
         TriangularPrisimCalculator()
 ##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
 def QuadraticRoots():
     program_STATE = 'quadratics'
     ConsoleClear()
@@ -394,17 +339,6 @@ def QuadraticRoots():
             expression_QUADRATIC_COMPLEX_ROOT = (-expression_QUADRATIC_ROOT_B / (2 * expression_QUADRATIC_ROOT_A))
             print('( -' + str(expression_QUADRATIC_ROOT_B) + ' / ( 2 * ' + str(expression_QUADRATIC_ROOT_A) + ' )) = roots: {: ' + str(expression_QUADRATIC_COMPLEX_ROOT) + ' +-i ' + str(expression_QUADRATIC_ROOT_SQRT_VAL) + ' }')
 ##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
 def PercentageCalc():
     program_STATE = 'percentage'
     '''This is going to be a function calculating percentages and transferring from a decimal to a percenage
@@ -424,17 +358,6 @@ def PercentageCalc():
         expression_PERCENT_OF = int(input('Percent Of: '))
         expression_PERCENT = expression_DECIMAL * expression_PERCENT_OF
         print(str(expression_DECIMAL) + ' * ' + str(expression_PERCENT_OF) + ' = ' + str(expression_PERCENT) + '%')
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
 ##########################
 def Equations():
     program_STATE = 'equations'
@@ -467,27 +390,61 @@ def Equations():
             step_2 = (step_1 / x_input)
             print(str(x_input) + 'x ' + operation_sign + ' ' + str(num_input) + ' = X = ' + str(step_2))
 ##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
-##########################
+
+
+cyclic_quad_ops = ['1', '2']
+
+
+def cyclic_quad_area():
+    
+    CYCLIC_SIDE_A = int(input('Side A: '))
+    CYCLIC_SIDE_B = int(input('Side B: '))
+    CYCLIC_SIDE_C = int(input('Side C: '))
+    CYCLIC_SIDE_D = int(input('Side D: '))
+
+    CYCLIC_PERM = (1/2)*(CYCLIC_SIDE_A + CYCLIC_SIDE_B + CYCLIC_SIDE_C + CYCLIC_SIDE_D)
+
+    print('( 1 / 2 ) * ( ' + str(CYCLIC_SIDE_A) + ' + ' + str(CYCLIC_SIDE_B) + ' + ' + str(CYCLIC_SIDE_C) + ' + ' + str(CYCLIC_SIDE_D) + ' ) = ' + str(CYCLIC_PERM))
+
+
+    CYCLIC_AREA = sqrt((CYCLIC_PERM - CYCLIC_SIDE_A)*(CYCLIC_PERM - CYCLIC_SIDE_B) * (CYCLIC_PERM - CYCLIC_SIDE_C) * (CYCLIC_PERM - CYCLIC_SIDE_D))
+    print(str(CYCLIC_AREA))
+    #print('sqrt( ( ' + str(CYCLIC_PERM) + ' - ' + str(CYCLIC_SIDE_A) + ' ) * ( ' + str(CYCLIC_PERM) + ' - ' + str(CYCLIC_SIDE_B) + ' ) * ( ' + str(CYCLIC_PERM) + ' - ' + str(CYCLIC_SIDE_C) + ' ) * ( ' str(CYCLIC_PERM) + ' - ' + str(CYCLIC_SIDE_D) + ' ) = ' + str(CYCLIC_AREA))
+
+def cyclic_quad_perimeter():
+    CYCLIC_SIDE_A = int(input('Side A: '))
+    CYCLIC_SIDE_B = int(input('Side B: '))
+    CYCLIC_SIDE_C = int(input('Side C: '))
+    CYCLIC_SIDE_D = int(input('Side D: '))
+
+    CYCLIC_PERM = (1/2)*(CYCLIC_SIDE_A + CYCLIC_SIDE_B + CYCLIC_SIDE_C + CYCLIC_SIDE_D)
+
+    print('( 1 / 2 ) * ( ' + str(CYCLIC_SIDE_A) + ' + ' + str(CYCLIC_SIDE_B) + ' + ' + str(CYCLIC_SIDE_C) + ' + ' + str(CYCLIC_SIDE_D) + ' ) = ' + str(CYCLIC_PERM))
+
+
+def cyclic_quad():
+    print('1. Area')
+    print('2. perimeter')
+    cyclic_quad_input = input(': ')
+
+    if cyclic_quad_input not in cyclic_quad_ops:
+        print('Not an option provided.')
+    elif cyclic_quad_input == '1':
+        cyclic_quad_area()
+    elif cyclic_quad_input == '2':
+        cyclic_quad_perimeter()
+
+
 def gravitational_Pull():
-    Grav_Constant_Input = float(input('Gravity Constant: '))
-    Mass_One_Input = int(input('Mass 1: '))
+    Grav_Constant = float(0.0000000000667)
+    Mass_One_Input = float(input('Mass 1: '))
     Mass_Two_Input = int(input('Mass 2: '))
     Dist_Of_OBJS = int(input('Distance: '))
     #
-    Force_VAL = (Grav_Constant_Input * (Mass_One_Input * Mass_Two_Input) / (Dist_Of_OBJS ** 2))
+    Force_VAL = (Grav_Constant * (Mass_One_Input * Mass_Two_Input) / (Dist_Of_OBJS ** 2))
     #
     #
-    print(str(Grav_Constant_Input) + ' * ( ' + str(Mass_One_Input) + ' * ' + str(Mass_Two_Input) + ' / ' + str(Dist_Of_OBJS) + ' ^2 ) = ' + str(Force_VAL))
+    print(str(Grav_Constant) + ' * ( ' + str(Mass_One_Input) + ' * ' + str(Mass_Two_Input) + ' / ' + str(Dist_Of_OBJS) + ' ^2 ) = ' + str(Force_VAL))
     ConsoleClear()
 
 def velocity_Calculation():
@@ -516,6 +473,7 @@ def Physics():
     print('1. gravitational Force')
     print('2. velocity')
     print('3. acceleration')
+    print('4. Cyclic Quadrilateral')
     Physics_Option_Input = input(': ')
     #
     if Physics_Option_Input not in Physics_Options_Selections:
@@ -526,11 +484,8 @@ def Physics():
         velocity_Calculation()
     elif Physics_Option_Input == '3':
         acceleration_CALC()
-##########################
-##########################
-##########################
-##########################
-##########################
+    elif Physics_Option_Input == '4':
+        cyclic_quad()
 ##########################
 
 def Arithmetic_Sequence():
@@ -568,11 +523,42 @@ def Arithmetic_Calcs():
         Arithmetic_SUM()
 
 ##########################
+Conic_Ops = ['1', '2', '3']
+
+
+def Conic_Circle():
+    X_VAL_INPUT = int(input('X: '))
+    H_VAL_INPUT = int(input('H: '))
+    Y_VAL_INPUT = int(input('Y: '))
+    K_VAL_INPUT = int(input('K: '))
+
+    R_VAL = ((X_VAL_INPUT - H_VAL_INPUT) ** 2) + ((Y_VAL_INPUT - K_VAL_INPUT) ** 2)
+
+    FORMULA_ANS = R_VAL ** 2
+
+    print('( ' + str(X_VAL_INPUT) + ' - ' + str(H_VAL_INPUT) + ')^2 + ( ' + str(Y_VAL_INPUT) + ' - ' + str(K_VAL_INPUT) + ' )^2 = ' + str(FORMULA_ANS))
+
+    ConsoleClear()
+
+
+def Conic():
+    print('1. Circle')
+    print('2. Ellipse (DOES NOT WORK)')
+    print('3. Hyperbola (DOES NOT WORK)')
+
+    Conic_Ops_Input = input(': ')
+
+    if Conic_Ops_Input not in Conic_Ops:
+        print('Not an option provided')
+    elif Conic_Ops_Input == '1':
+        Conic_Circle()
+    elif Conic_Ops_Input == '2':
+        pass
+    elif Conic_Ops_Input == '3':
+        pass
+
 ##########################
-##########################
-##########################
-##########################
-##########################
+
 '''
 The Code below is the main menu and everything else has to stay above
 Only modify the main menu when a new formula function is added.
@@ -580,20 +566,59 @@ When a new formula is added you will have to add the main menu option.
 You will aslo have to add the exact same option to the main menu option index aswell.
 '''
 
+def credits():
+    ConsoleClear()
+    print('Advanced Calculator\n By Jacob Hamilton')
+    print('#.....')
+    ConsoleClear()
+    print('Advanced Calculator\n By Jacob Hamilton')
+    print('.#....')
+    ConsoleClear()
+    print('Advanced Calculator\n By Jacob Hamilton')
+    print('..#...')
+    ConsoleClear()
+    print('Advanced Calculator\n By Jacob Hamilton')
+    print('...#..')
+    ConsoleClear()
+    print('Advanced Calculator\n By Jacob Hamilton')
+    print('....#.')
+    ConsoleClear()
+    print('Advanced Calculator\n By Jacob Hamilton')
+    print('.....#')
+    ConsoleClear()
+
+def ValueErrorMSG(msg):
+    msg = ValueError
+    print(msg)
+    time.sleep(3)
+    ConsoleClear()
+    Main()
+
+
 def Main():
     program_STATE = 'menu'
     running = True
     while running:
-        print('1. Pythagorean Theorem')
-        print('2. Basic Math')
-        print('3. Circles')
-        print('4. Slope')
-        print('5. Geometry')
-        print('6. Quadratic Equation / roots')
-        print('7. Percentages')
-        print('8. Equations (ex: 2x+10)')
-        print('9. physics')
-        print('10. Arithmetic sequences & series')
+        print('*************************************************')
+        print('*         Advanced Calculator                   *')
+        print('*         By: Jacob Hamilton                    *')
+        print('*   Git: https://github.com/hamilton-griffin    *')
+        print('*                                               *')
+        print('*                                               *')
+        print('*        1. Pythagorean Theorem                 *')
+        print('*        2. Basic Math                          *')
+        print('*        3. Circles                             *')
+        print('*        4. Slope                               *')
+        print('*        5. Geometry                            *')
+        print('*        6. Quadratic Equation / roots          *')
+        print('*        7. Percentages                         *')
+        print('*        8. Equations (ex: 2x+10)               *')
+        print('*        9. physics                             *')
+        print('*        10. Arithmetic sequences & series      *')
+        print('*        11. Conic                              *')
+        print('*                                               *')
+        print('*      All units are using the Metric System    *')
+        print('*************************************************')
         user_input = input(': ')
         if user_input not in main_options:
             print('not an option.')
@@ -617,6 +642,8 @@ def Main():
             Physics()
         elif user_input == '10':
             Arithmetic_Calcs()
+        elif user_input == '11':
+            Conic()
 '''
 try:
     Main()
@@ -643,4 +670,44 @@ ALL THE CODE ABOVE IS FOR DEBUGGING AND IS ALSO EXPERIMENTAL AND DOESNT WORK :(
     ADD THE CODE THEN WHEN DEBUGGIN IS DONE DONT DELETE THE DEBUG CODE USED
     COMMENT IT OUT SO IT CAN BE USED IF NEEDED AT A LATER TIME.
 '''
-Main()
+
+'''
+The code below works and is improved the code above doesnt work do not use.
+the code below will catch any value errors or keyboard interuptions as a back button
+'''
+'''
+menu art below
+
+
+        print('*************************************************')
+        print('*         Advanced Calculator                   *')
+        print('*         By: Jacob Hamilton                    *')
+        print('*                                               *')
+        print('*                                               *')
+        print('*        1. Pythagorean Theorem                 *')
+        print('*        2. Basic Math                          *')
+        print('*        3. Circles                             *')
+        print('*        4. Slope                               *')
+        print('*        5. Geometry                            *')
+        print('*        6. Quadratic Equation / roots          *')
+        print('*        7. Percentages                         *')
+        print('*        8. Equations (ex: 2x+10)               *')
+        print('*        9. physics                             *')
+        print('*        10. Arithmetic sequences & series      *')
+        print('*        11. Conic                              *')
+        print('*                                               *')
+        print('*      All units are using the Metric System    *')
+        print('*************************************************')
+
+'''
+
+
+credits()
+try:
+    Main()
+except ValueError:
+    valMSG = 'VALUE ERROR'
+    ValueErrorMSG(valMSG)
+except KeyboardInterrupt:
+    ConsoleClear()
+    Main()
